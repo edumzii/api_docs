@@ -1,0 +1,134 @@
+.navbar {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    background: var(--surface2);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    .logo {
+        margin-left: .5em;
+        margin-right: auto;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        gap: .5em;
+        font-size: .9rem;
+    }
+}
+
+@media(max-width: 720px) {
+
+    .navbar {
+        position: relative;
+
+        .hamburger-icon {
+            height: 24px;
+            margin-inline: .5em;
+            display: block;
+        }
+
+        ul {
+            flex-direction: column;
+            background: var(--surface1);
+            position: absolute;
+            left: 74%;
+            top: 100%;
+            height: max-content;
+            margin: 0;
+            border-radius: 5px;
+            padding-block: .25em;
+            z-index: 20;
+            transition: .75s ease-in-out;
+            display: none;
+
+            li {
+                height: 2em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                cursor: pointer;
+                margin-inline: .5em;
+
+                .nav-link,
+                .sign-in {
+                    margin-left: 0;
+                    width: 100%;
+                    border-radius: 5px;
+                    margin-inline: .25em;
+                    padding: .25em;
+                    font-size: .75rem;
+                }
+
+                .nav-link:hover,
+                .sign-in:hover {
+                    background: var(--surface3);
+                }
+
+                .sign-in {
+
+                    svg {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .nav-links {
+        flex-direction: column;
+
+        svg {
+            display: block;
+        }
+    }
+}
+
+@media(min-width: 721px) {
+
+    .sign-in {
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
+
+    .nav-links {
+        flex-direction: initial;
+    }
+
+}
+
+
+.sign-in {
+    margin-right: 1em;
+    padding-inline: 1em;
+    font-weight: 600;
+    font-size: .95rem;
+
+    svg {
+        transform: rotateZ(180deg);
+        fill: #8686f5;
+        width: 20px;
+    }
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 600;
+    margin-inline: .5em;
+    font-size: .9rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+.nav-link:first-of-type {
+    margin-left: auto;
+}
